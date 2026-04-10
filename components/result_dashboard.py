@@ -73,7 +73,7 @@ def _status_label(status: str) -> str:
 
 def _render_chat_assistant(context: dict):
     """RENDER FEATURE 1: AI Chat Assistant"""
-    st.markdown('<div class="section-label" style="margin-top:1.5rem;">💬 Ask Diagnova AI</div>', unsafe_allow_html=True)
+    st.markdown('<div class="section-label" style="margin-top:1.5rem;">💬 Ask LabLens AI</div>', unsafe_allow_html=True)
     
     if "chat_history" not in st.session_state:
         st.session_state.chat_history = []
