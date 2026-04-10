@@ -73,49 +73,76 @@ def _status_label(status: str) -> str:
 
 def _render_chat_assistant(context: dict):
     """RENDER FEATURE 1: AI Chat Assistant"""
-    st.markdown('<div class="section-label" style="margin-top:1.5rem;">💬 Ask LabLens AI</div>', unsafe_allow_html=True)
+    st.markdown(
+        '<div class="section-label" style="margin-top:1.5rem;">💬 Ask LabLens AI</div>',
+        unsafe_allow_html=True
+    )
     
     if "chat_history" not in st.session_state:
         st.session_state.chat_history = []
 
-    # Display chat history
+    # Chat container
     chat_container = st.container(height=350)
+
     with chat_container:
         for message in st.session_state.chat_history:
-            with st.chat_message(message["role"]):
-                st.markdown(message["content"])
+            if message["role"] == "user":
+                with st.chat_message("user"):
+                    st.markdown(
+                        f"""
+                        <div style="
+                            background-color: #e8f5e9;
+                            padding: 10px;
+                            border-radius: 10px;
+                            color: #1b5e20;
+                        ">
+                            {message["content"]}
+                        </div>
+                        """,
+                        unsafe_allow_html=True
+                    )
+
+            else:
+                with st.chat_message("assistant"):
+                    st.markdown(
+                        f"""
+                        <div style="
+                            background-color: #eef6ff;
+                            padding: 12px;
+                            border-radius: 12px;
+                            border-left: 4px solid #1f77ff;
+                            color: #0f172a;
+                            line-height: 1.5;
+                        ">
+                            {message["content"]}
+                        </div>
+                        """,
+                        unsafe_allow_html=True
+                    )
 
     # Chat input
     if prompt := st.chat_input("Ask about your results..."):
-        # Make sure we stay on the chat tab
         st.session_state.active_tab = "💬 Chat"
-        
-        with chat_container:
-            with st.chat_message("user"):
-                st.markdown(prompt)
-        
-        st.session_state.chat_history.append({"role": "user", "content": prompt})
-        
-        with st.chat_message("assistant"):
-         with st.spinner("Thinking..."):
-            response = get_chat_response(st.session_state.chat_history, context)
-        
-        st.markdown(
-            f"""
-            <div style="
-                background-color: #eef6ff;
-                padding: 12px;
-                border-radius: 12px;
-                border-left: 5px solid #1f77ff;
-                color: #0f172a;
-                font-size: 0.9rem;
-                line-height: 1.5;
-            ">
-                {response}
-            </div>
-            """,
-            unsafe_allow_html=True
+
+        # Save user message FIRST (important for order)
+        st.session_state.chat_history.append({
+            "role": "user",
+            "content": prompt
+        })
+
+        # Generate response
+        response = get_chat_response(
+            st.session_state.chat_history,
+            context
         )
+
+        st.session_state.chat_history.append({
+            "role": "assistant",
+            "content": response
+        })
+
+        # Refresh UI
+        st.rerun()
 
 
 def _render_single_card(r: dict):
