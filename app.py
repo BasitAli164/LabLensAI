@@ -462,7 +462,7 @@ st.markdown("""
             <span class="badge-dot"></span>
             AI-Powered · Medical Intelligence
         </div>
-        <h1 class="hero-title">LabLensAI<span>va</span></h1>
+        <h1 class="hero-title">LabLensAI</h1>
         <p class="hero-subtitle">
             Upload your diagnostic report and receive clear, structured insights — 
             understanding your health has never been this accessible.
