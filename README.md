@@ -9,7 +9,7 @@
 
 **Empowering patients by translating complex medical reports into clear, actionable health insights.**
 
-[🚀 Live Demo](https://diagnova.streamlit.app/) ·  
+[🚀 Live Demo](https://lablensai.streamlit.app/) ·  
 [📋 Technical Overview](#-technical-architecture) ·  
 [⚕️ Medical Disclaimer](#-medical-disclaimer)
 

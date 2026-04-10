@@ -4,7 +4,7 @@ from components.result_dashboard import render_result_dashboard
 from components.sidebar import render_sidebar
 
 st.set_page_config(
-    page_title="Diagnova · AI-Powered Lab Report Interpreter",
+    page_title="LabLensAI · AI-Powered Lab Report Interpreter",
     page_icon="🧬",
     layout="wide",
     initial_sidebar_state="collapsed",
@@ -502,7 +502,7 @@ st.markdown("""
 <div class="disclaimer animate-in">
     <span style="font-size:1rem;flex-shrink:0;margin-top:1px;">⚕️</span>
     <span class="disclaimer-text">
-        <strong>Medical Disclaimer:</strong> Diagnova is an educational tool designed to help you 
+        <strong>Medical Disclaimer:</strong> LabLensAI is an educational tool designed to help you 
         understand your lab results. It does not replace professional medical advice, diagnosis, or 
         treatment. Always consult a qualified healthcare provider with questions about your health.
     </span>

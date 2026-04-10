@@ -4,7 +4,7 @@ import streamlit as st
 def render_sidebar():
     """Renders app info as a top expander — works on all platforms including HuggingFace."""
 
-    with st.expander("ℹ️ About Diagnova · How It Works · Risk Legend", expanded=False):
+    with st.expander("ℹ️ About LabLensAI · How It Works · Risk Legend", expanded=False):
 
         col1, col2, col3 = st.columns(3)
 
