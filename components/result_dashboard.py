@@ -97,12 +97,25 @@ def _render_chat_assistant(context: dict):
         st.session_state.chat_history.append({"role": "user", "content": prompt})
         
         with st.chat_message("assistant"):
-            with st.spinner("Thinking..."):
-                response = get_chat_response(st.session_state.chat_history, context)
-                st.markdown(response)
+         with st.spinner("Thinking..."):
+            response = get_chat_response(st.session_state.chat_history, context)
         
-        st.session_state.chat_history.append({"role": "assistant", "content": response})
-        st.rerun()
+        st.markdown(
+            f"""
+            <div style="
+                background-color: #eef6ff;
+                padding: 12px;
+                border-radius: 12px;
+                border-left: 5px solid #1f77ff;
+                color: #0f172a;
+                font-size: 0.9rem;
+                line-height: 1.5;
+            ">
+                {response}
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
 
 
 def _render_single_card(r: dict):
