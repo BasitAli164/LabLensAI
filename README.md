@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🧬 Diagnova  
+# 🧬 LabLensAI  
 ### AI-Powered Lab Report Interpreter for Patients
 
 [![Built with Streamlit](https://img.shields.io/badge/Built%20with-Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://streamlit.io)
@@ -17,7 +17,7 @@
 
 ---
 
-## 🌟 What Problem Does Diagnova Solve?
+## 🌟 What Problem Does LabLensAI Solve?
 
 Medical lab reports are written for doctors — not patients.
 
@@ -26,13 +26,13 @@ Patients often receive:
 - Medical jargon  
 - No clear explanation of what’s *normal*, *borderline*, or *serious*
 
-**Diagnova bridges this gap.**
+**LabLensAI bridges this gap.**
 
 It transforms raw lab reports into **easy-to-understand explanations**, highlights **abnormal results**, and guides users on **what to do next** — safely and responsibly.
 
 ---
 
-## 🧪 What Diagnova Does
+## 🧪 What LabLensAI Does
 
 - 📄 Accepts **PDF lab reports** or **pasted lab text**
 - 🔍 Extracts key medical values automatically
@@ -67,7 +67,7 @@ It transforms raw lab reports into **easy-to-understand explanations**, highligh
 
 ## 🏗️ Technical Architecture
 
-Diagnova uses a **hybrid GenAI + deterministic system** to stay accurate and safe.
+LabLensAI uses a **hybrid GenAI + deterministic system** to stay accurate and safe.
 
 ```mermaid
 graph LR
@@ -87,7 +87,7 @@ graph LR
 ## 🧠 GenAI Features (Judge-Friendly)
 
 ### 1️⃣ Structured AI Extraction
-Instead of brittle regex, Diagnova uses LLM-based extraction to handle:
+Instead of brittle regex, LabLensAI uses LLM-based extraction to handle:
 - Any lab format
 - Any hospital layout
 - Messy or partial reports
@@ -100,7 +100,7 @@ AI explanations are not hallucinated. Each explanation is generated using:
 The AI is strictly instructed to explain — never diagnose or prescribe.
 
 ### 3️⃣ Multi-Parameter Reasoning
-Diagnova doesn’t analyze values in isolation.
+LabLensAI doesn’t analyze values in isolation.
 Examples:
 - **Low Hemoglobin + Low MCV** → Possible anemia pattern
 - **High WBC + Neutrophils** → Infection indicators
@@ -129,7 +129,7 @@ Each analysis includes a confidence score based on:
 
 ## 🌍 Multi-Language Support
 
-Diagnova supports instant translation of summaries into:
+LabLensAI supports instant translation of summaries into:
 - Spanish
 - Urdu
 - Hindi
@@ -151,13 +151,13 @@ Healthcare clarity should be global.
 
 ## ⚕️ Medical Disclaimer
 
-Diagnova is an educational tool only. It does not replace professional medical advice, diagnosis, or treatment. Always consult a qualified healthcare provider for medical decisions.
+LabLensAI is an educational tool only. It does not replace professional medical advice, diagnosis, or treatment. Always consult a qualified healthcare provider for medical decisions.
 
 ---
 
 <div align="center">
 
 Built for the Hugging Face Medical Hackathon
-🧬 Diagnova — Your Health, Decoded.
+🧬 LabLensAI — Your Health, Decoded.
 
 </div>
